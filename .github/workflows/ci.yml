@@ -1,0 +1,46 @@
+# BlueGrays · bluegrays.com
+# Her gönderimde kütüphane kurallarını ve örneklerin derlenmesini kontrol eder.
+# Checks the library rules and compiles every example on each push.
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/arduino-lint-action@v2
+        with:
+          library-manager: submit
+          compliance: strict
+
+  compile:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        board:
+          - fqbn: esp32:esp32:esp32
+            url: https://espressif.github.io/arduino-esp32/package_esp32_index.json
+          - fqbn: rp2040:rp2040:rpipicow
+            url: https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
+    steps:
+      - uses: actions/checkout@v4
+      - uses: arduino/compile-sketches@v1
+        with:
+          fqbn: ${{ matrix.board.fqbn }}
+          platforms: |
+            - name: ${{ startsWith(matrix.board.fqbn, 'esp32') && 'esp32:esp32' || 'rp2040:rp2040' }}
+              source-url: ${{ matrix.board.url }}
+          libraries: |
+            - source-path: ./
+            - name: WebSockets
+            - name: ArduinoJson
+            - name: DHT sensor library
+            - name: Adafruit Unified Sensor
+          sketch-paths: |
+            - examples
+          enable-warnings-report: true
