@@ -2,7 +2,9 @@
 
 Control **ESP32** and **Raspberry Pi Pico W** boards from the [BlueGrays](https://bluegrays.com) app: switches, sliders, colors and live sensor values with charts, over a secure WebSocket.
 
-[Türkçe](#türkçe) · [Examples](#examples) · [API](#api) · [Protocol](extras/PROTOCOL.md) · [bluegrays.com](https://bluegrays.com)
+**English** · [Türkçe](README.tr.md) · [Deutsch](README.de.md) · [Español](README.es.md) · [Français](README.fr.md) · [Italiano](README.it.md) · [日本語](README.ja.md) · [Português](README.pt.md)
+
+[Examples](#examples) · [API](#api) · [Protocol](extras/PROTOCOL.md) · [bluegrays.com](https://bluegrays.com)
 
 > **Status: 0.1.0 preview.** The BlueGrays IoT service is opening in stages. The API below is stable enough to build on; breaking changes will bump the minor version until 1.0.
 
@@ -139,28 +141,3 @@ Compile-time settings live in [`BlueGraysIoTConfig.h`](src/BlueGraysIoTConfig.h)
 ## License
 
 [MIT](LICENSE) © 2026 Yunus Emre Eke (BlueGrays)
-
----
-
-## Türkçe
-
-**BlueGrays IoT**, ESP32 ve Raspberry Pi Pico W kartlarını BlueGrays uygulamasından yönetmeni sağlar. Telefondan lambayı aç, sıcaklığı canlı izle, LED şeridin rengini değiştir.
-
-**Nasıl kurulur**
-
-1. Arduino IDE'de Taslak › Kütüphane Ekle › Kütüphaneleri Yönet'i aç, **BlueGraysIoT** yaz ve Kur'a bas. Bağımlılıkları sorarsa **Tümünü kur** de.
-2. BlueGrays uygulamasında Atölyem › Cihazlarım › Yeni cihaz ekle'ye gir, şablonunu seç.
-3. Uygulamanın hazırladığı kodu kopyala, Arduino IDE'ye yapıştır ve yükle.
-4. Seri Port Ekranı'nı 115200 hızında aç. `BlueGrays IoT: bağlandı` yazısını gördüğünde telefonundan yönetebilirsin.
-
-**Bilmen gerekenler**
-
-- Kart yalnız **2,4 GHz** Wi-Fi ağlarına bağlanır.
-- Her kartın kendi cihaz anahtarı var. Aynı kodu iki karta yüklersen ilk kart bağlantıyı kaybeder.
-- Wi-Fi şifren kartta kalır, sunucumuza gönderilmez.
-- Sınırlar (cihaz sayısı, grafik, hız) sunucuda kontrol edilir; kodu değiştirmek bunları aşmaz.
-- Kodu paylaşma. Paylaştıysan uygulamada anahtarı yenile, eskisi hemen geçersiz olur.
-
-Durum mesajlarını Türkçe görmek için `bg.setLanguage(BG_LANG_TR);` ekle. Uygulamanın ürettiği kodda bu satır zaten var.
-
-Projeler, devre şemaları ve uygulama: [bluegrays.com](https://bluegrays.com)
