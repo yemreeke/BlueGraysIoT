@@ -2,7 +2,7 @@
 
 Control **ESP32** and **Raspberry Pi Pico W** boards from the [BlueGrays](https://bluegrays.com) app: switches, sliders, colors and live sensor values with charts, over a secure WebSocket.
 
-[Türkçe](#türkçe) · [Examples](#examples) · [API](#api) · [Protocol](extras/PROTOCOL.md) · [Arduino-Projeleri](https://github.com/yemreeke/Arduino-Projeleri)
+[Türkçe](#türkçe) · [Examples](#examples) · [API](#api) · [Protocol](extras/PROTOCOL.md) · [bluegrays.com](https://bluegrays.com)
 
 > **Status: 0.1.0 preview.** The BlueGrays IoT service is opening in stages. The API below is stable enough to build on; breaking changes will bump the minor version until 1.0.
 
@@ -163,4 +163,4 @@ Compile-time settings live in [`BlueGraysIoTConfig.h`](src/BlueGraysIoTConfig.h)
 
 Durum mesajlarını Türkçe görmek için `bg.setLanguage(BG_LANG_TR);` ekle. Uygulamanın ürettiği kodda bu satır zaten var.
 
-Projeler ve devre şemaları: [Arduino-Projeleri](https://github.com/yemreeke/Arduino-Projeleri) · [bluegrays.com](https://bluegrays.com)
+Projeler, devre şemaları ve uygulama: [bluegrays.com](https://bluegrays.com)
